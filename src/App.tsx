@@ -116,8 +116,8 @@ function App() {
             Download Elguide-testfil <i>(fiktiv data)</i>
           </a>
           <p className="text-xs">
-            (Benytter du ikke Windows, så kontrollerer at filen er enkodet i
-            Windows-1252 / CRLF)
+            (Benytter du ikke Windows, så kontroller at filen er enkodet i
+            "Windows-1252" med linjeslutningssekvens "CRLF")
           </p>
           <a
             href="/AutoMYP-skema.xlsx"
