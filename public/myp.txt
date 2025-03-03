@@ -1,0 +1,301 @@
+                                        KONTANT 3841 0000000
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: eCOM NPCC               386925
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Kunden ¯nsker at blive MyPOWER                               0,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            386925 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000000
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000001
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Maya K.                 386925
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            386925 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000001
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000002
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Maya K.                 386925
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              Kontantbel¯b                                                20,00
+							Tilbage kontant               10,00                        -10,00
+              Kvittering sendt via mail 22.01.25
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000003
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: eCOM NPCC               389563
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Kunden ¯nsker at blive MyPOWER                               0,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            389563 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000003
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000004
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Leo O.                  389563
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Kunden ¯nsker at blive MyPOWER                               0,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            389563 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000004
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000005
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Leo O.                  389563
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Allerede MyPOWER
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              Kontantbel¯b                                                20,00
+							Tilbage kontant               10,00                        -10,00
+              Kvittering sendt via mail 22.01.25
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000006
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: eCOM NPCC               388433
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            388433 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000006
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000007
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Noah S.                 388433
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Er myp
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            388433 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000007
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000008
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Noah S.                 388433
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Er myp
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              Kontantbel¯b                                                20,00
+							Tilbage kontant               10,00                        -10,00
+              Kvittering sendt via mail 22.01.25
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000009
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: eCOM NPCC               381554
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Kunden ¯nsker at blive MyPOWER                               0,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            381554 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000009
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000010
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Alexander               381554
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              ÿNSKER IKKE AT BLIVE MYPOWER M                               0,00
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              FORHANDLERS KOPI           | AID         ??????????????
+                                         | MID        ???????????????
+              Operat¯r            381554 | TID     ??????????????????
+              Dato            22.01.2025 | PTID              ????????
+              Tidspunkt         02:29:00 |
+                                         | Auth. code          ??????
+              Kort                  ???? | Tender ???????????????????
+              PAN seq.                00 | Reference     3841-0000010
+              Foretrukket navn      VISA |
+              Type  visacommercialcredit | Type       VARER_TJENESTER
+              betalingsmÂde         visa | I alt            DKK 10,00
+              Var.  visacommercialcredit |
+              EntryMode  Kontaktlùs chip | Godkendt
+              BEKR∆FTET AF ENHED         |
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+                                        KONTANT 3841 0000011
+      Jesper Boysen                     ----------------------------------------
+      Hovedvejen 197                    Ordrenr.: 220104  22.01.25  (3)  4-02:29
+      2600 Glostrup                     SÊlger..: Alexander               381554
+                                        Telefon.: +4521436587
+      E-mail kunde: kunde@mail.dk
+--------------------------------------------------------------------------------
+Varekode      Beskrivelse                        Ldato    Pris   Ant     Bel¯b
+--------------------------------------------------------------------------------
+VAND          Vand                                       10,00     1      10,00
+              Er myp
+                                                                     ----------
+              TOTAL (Inkl. moms DKK 2,50)                   DKK           10,00
+                                                                                                                                                                                                                                                                                                                                      
+              Kontantbel¯b                                                20,00
+							Tilbage kontant               10,00                        -10,00
+              Kvittering sendt via mail 22.01.25
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

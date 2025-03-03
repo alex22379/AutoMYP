@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --color-power-100: #ffe4d9;
+  --color-power-200: #ffc2a9;
+  --color-power-300: #ff9872;
+  --color-power-400: #f15c25;
+  --color-power-500: #c94a1d;
+  --color-power-600: #a33a18;
+  --color-power-700: #7d2d13;
+  --color-power-800: #5a210e;
+  --color-power-900: #3b1709;
+  --color-power-1000: #210d05;
+  --color-power: var(--color-power-400);
+
+  --color-power-gray-400: #313639;
+  --color-power-gray: var(--color-power-gray-400);
+}
+
+@utility flow-* {
+  & > * + * {
+    margin-top: --value([ *]);
+    margin-top: calc(var(--spacing) * --value(integer));
+  }
+}
+
+@utility escape-tw {
+  all: initial !important;
+}
