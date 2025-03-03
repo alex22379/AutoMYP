@@ -115,14 +115,14 @@ function App() {
           <a href="/myp.txt" download="myp.txt">
             Download Elguide-testfil <i>(fiktiv data)</i>
           </a>
-          <p class="text-xs">
+          <p className="text-xs">
             (Benytter du ikke Windows, så kontrollerer at filen er enkodet i
             Windows-1252 / CRLF)
           </p>
           <a
             href="/AutoMYP-skema.xlsx"
             download="AutoMYP-skema.xlsx"
-            class="mt-1"
+            className="mt-1"
           >
             Download Excel-skabelon
           </a>
