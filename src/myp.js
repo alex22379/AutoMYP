@@ -5,6 +5,70 @@ export function getMypFormattedText(bilagArr) {
   return mypText;
 }
 
+function areSameDay(date1, date2) {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+export function getDatePeriodString(bilagArr) {
+  let lowest = Number.MAX_SAFE_INTEGER;
+  let highest = Number.MIN_SAFE_INTEGER;
+
+  for (let bilag of bilagArr) {
+    const timestamp = bilag.timestamp;
+
+    if (timestamp < lowest) lowest = timestamp;
+    if (timestamp > highest) highest = timestamp;
+  }
+
+  const lowestDate = new Date(lowest);
+  const highestDate = new Date(highest);
+  const options = {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  };
+  console.log(
+    `${lowestDate.toLocaleDateString("da-DK", options)} - ${highestDate.toLocaleDateString("da-DK", options)}`,
+  );
+  if (areSameDay(lowestDate, highestDate))
+    return `${highestDate.toLocaleDateString("da-DK", options)}`;
+  else
+    return `${lowestDate.toLocaleDateString("da-DK", options)} - ${highestDate.toLocaleDateString("da-DK", options)}`;
+}
+
+export function getSalesmenMypStats(bilagArr) {
+  const salesmenStats = {};
+  for (let bilag of bilagArr) {
+    const salesman = bilag.salesman;
+    const mypStatus = bilag.myp.toString();
+    if (!salesmenStats[salesman]) salesmenStats[salesman] = {};
+    if (salesmenStats[salesman][mypStatus])
+      salesmenStats[salesman][mypStatus] += 1;
+    else salesmenStats[salesman][mypStatus] = 1;
+
+    salesmenStats[salesman]["name"] = bilag.name;
+  }
+  for (let salesman of Object.keys(salesmenStats)) {
+    let total = 0;
+    for (let i = 0; i < 4; i++)
+      total += salesmenStats[salesman][i.toString()] ?? 0;
+    salesmenStats[salesman]["total"] = total;
+
+    const hitrate =
+      ((salesmenStats[salesman]["3"] ?? 0) +
+        (salesmenStats[salesman]["1"] ?? 0) +
+        (salesmenStats[salesman]["2"] ?? 0) / 2) /
+      total;
+
+    salesmenStats[salesman]["hitrate"] = hitrate;
+  }
+  return salesmenStats;
+}
+
 export function getBilagFromFile(file, qualify = true) {
   const fileSplit = file.split(
     "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\r\n",
@@ -14,7 +78,6 @@ export function getBilagFromFile(file, qualify = true) {
   const query = window.location.search;
   const params = new URLSearchParams(query);
   const salesmen = JSON.parse(params.get("salesmen") || "{}");
-  console.log("salesmen", salesmen);
 
   const bilagArr = [];
   for (let bilag of fileSplit) {
@@ -118,6 +181,11 @@ export function extractBilagMeta(bilag, salesmen) {
   const [day, month, year] = dateStr.split(".").map(Number);
   const date = new Date(year + 2000, month - 1, day);
 
+  // Navn
+
+  const name =
+    Object.entries(salesmen).find(([k, v]) => v === salesman)?.[0] ?? "N/A";
+
   const meta = {
     bilag: kvittering,
     salesman: salesman,
@@ -127,6 +195,7 @@ export function extractBilagMeta(bilag, salesmen) {
     myp: myp,
     retur: retur,
     timestamp: date.getTime(),
+    name: name,
   };
 
   return meta;

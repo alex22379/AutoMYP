@@ -27,7 +27,7 @@ function App() {
               </a>
             </div>
           </header>
-          <main className="grid grid-cols-2 gap-8">
+          <main className="grid grid-cols-2 gap-6">
             <section className="space-y-4">
               <h2 className="text-power font-mono text-2xl font-bold uppercase">
                 Opsætning

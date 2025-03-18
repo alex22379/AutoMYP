@@ -34,3 +34,41 @@
     background-color: var(--color-gray-200);
   }
 }
+
+.myp-table {
+  border-collapse: collapse;
+
+  td,
+  th {
+    padding-inline: --spacing(2);
+    white-space: nowrap;
+  }
+
+  td {
+    border-color: var(--color-gray-400);
+    border-width: 1px;
+    border-style: dashed;
+  }
+
+  thead {
+    th {
+      padding-block: --spacing(1);
+      font-size: 1.05em;
+      font-weight: 800;
+    }
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background-color: var(--color-gray-300);
+    }
+
+    tr:nth-child(odd) {
+      background-color: var(--color-gray-200);
+    }
+
+    td {
+      font-weight: 500;
+    }
+  }
+}

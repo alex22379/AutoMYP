@@ -46,18 +46,13 @@ function guide() {
             </p>
           </li>
         </ol>
-        <p className="mt-2 text-sm font-bold">
-          Vend tilbage til denne hjemmeside:
-        </p>
+        <p className="mt-2 text-sm font-bold">Vend tilbage til hjemmesiden:</p>
         <ol className="ml-6 list-decimal text-xs">
           <li>
-            <p>Upload den eksportede fil fra Elguide</p>
+            <p>Upload den eksporterede fil fra Elguide</p>
           </li>
           <li>
-            <p>
-              Kopier teksten og indsæt den i Excel-skemaet under fanen{" "}
-              <i>"myp-data"</i> i celle <code>A1</code>
-            </p>
+            <p>Værsgo'</p>
           </li>
         </ol>
       </div>
@@ -69,13 +64,6 @@ function guide() {
           (Kontrollér at filen er enkodet i "Windows-1252" med
           linjeslutningssekvens "CRLF")
         </p>
-        <a
-          href="/AutoMYP-skema.xlsx"
-          download="AutoMYP-skema.xlsx"
-          className="mt-1"
-        >
-          Download Excel-skabelon
-        </a>
       </div>
     </article>
   );
