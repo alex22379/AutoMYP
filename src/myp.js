@@ -61,7 +61,7 @@ export function getSalesmenMypStats(bilagArr) {
     const hitrate =
       ((salesmenStats[salesman]["3"] ?? 0) +
         (salesmenStats[salesman]["1"] ?? 0) +
-        (salesmenStats[salesman]["2"] ?? 0) / 2) /
+        (salesmenStats[salesman]["2"] ?? 0) * 0.7) /
       total;
 
     salesmenStats[salesman]["hitrate"] = hitrate;
