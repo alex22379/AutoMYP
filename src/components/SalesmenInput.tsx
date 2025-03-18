@@ -28,8 +28,6 @@ function salesmenInput() {
     e.currentTarget.reset();
   }
 
-  let i = 0;
-
   return (
     <div className="space-y-3">
       <form onSubmit={(e) => handleSubmit(e)} className="space-y-2">
