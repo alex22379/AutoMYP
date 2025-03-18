@@ -17,13 +17,20 @@
   --color-power-gray: var(--color-power-gray-400);
 }
 
-@utility flow-* {
-  & > * + * {
-    margin-top: --value([ *]);
-    margin-top: calc(var(--spacing) * --value(integer));
-  }
+.input {
+  @apply rounded bg-gray-100 px-2 py-1 shadow-md;
 }
 
-@utility escape-tw {
-  all: initial !important;
+.button {
+  @apply bg-power border-power-600 border-3 active:scale-98 cursor-pointer rounded px-3.5 py-1.5 font-black uppercase text-white shadow-md hover:shadow-lg focus:shadow-lg;
+}
+
+.salesmen-table {
+  tr:nth-child(even) {
+    background-color: var(--color-gray-300);
+  }
+
+  tr:nth-child(odd) {
+    background-color: var(--color-gray-200);
+  }
 }

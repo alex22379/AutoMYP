@@ -1,7 +1,10 @@
 import { ChangeEvent, useState } from "react";
-import mypLogo from "./assets/myp-logo.png";
-import { FaCopy } from "react-icons/fa";
+import mypLogo from "@/assets/myp-logo.png";
 
+import DepartmentNameInput from "@/components/DepartmentNameInput.tsx";
+import SalesmenInput from "@/components/SalesmenInput.tsx";
+
+import { FaCopy } from "react-icons/fa";
 import { getMypData, getMypText } from "./myp";
 
 function App() {
@@ -37,7 +40,7 @@ function App() {
 
   return (
     <>
-      <main className="flow-4 flex min-h-dvh flex-col bg-power-gray p-9">
+      <main className="flow-4 bg-power-gray flex min-h-dvh flex-col p-9">
         <img src={mypLogo} alt="MyPOWER logo" className="h-auto w-96" />
         <div>
           <input
@@ -45,22 +48,22 @@ function App() {
             accept=".txt"
             onChange={handleMypFile}
             id="myp-data-file"
-            className="text-white file:cursor-pointer file:rounded file:border-2 file:border-gray-400 file:bg-gray-200 file:px-2.5 file:py-1 file:font-semibold file:text-power file:shadow-md"
+            className="file:text-power text-white file:cursor-pointer file:rounded file:border-2 file:border-gray-400 file:bg-gray-200 file:px-2.5 file:py-1 file:font-semibold file:shadow-md"
           />
         </div>
         <div>
-          <div className="group relative w-full md:w-[60%]">
+          <div className="max-w-225 group relative">
             <textarea
               onClick={selectMypText}
               id="myp-data-text"
-              className="peer field-sizing-content min-h-48 w-full rounded border-2 border-gray-400 bg-gray-200 px-2 py-1 text-gray-700 shadow-md outline-power"
+              className="field-sizing-content outline-power peer min-h-48 w-full rounded border-2 border-gray-400 bg-gray-200 px-2 py-1 text-gray-700 shadow-md"
               readOnly
               value={mypText}
             />
             <button
               onClick={copyMypText}
               id="myp-data-ctc"
-              className="leading absolute top-2 right-2 hidden aspect-square cursor-pointer text-power group-hover:inline peer-focus:inline focus:scale-[0.9]"
+              className="leading text-power absolute right-2 top-2 hidden aspect-square cursor-pointer focus:scale-[0.9] group-hover:inline peer-focus:inline"
             >
               <FaCopy />
             </button>
@@ -111,13 +114,13 @@ function App() {
             </li>
           </ol>
         </div>
-        <div className="flex flex-col text-sm text-power">
+        <div className="text-power flex flex-col text-sm">
           <a href="/myp.txt" download="myp.txt">
             Download Elguide-testfil <i>(fiktiv data)</i>
           </a>
           <p className="text-xs">
-            (Benytter du ikke Windows, så kontroller at filen er enkodet i
-            "Windows-1252" med linjeslutningssekvens "CRLF")
+            (Kontrollér at filen er enkodet i "Windows-1252" med
+            linjeslutningssekvens "CRLF")
           </p>
           <a
             href="/AutoMYP-skema.xlsx"
@@ -131,11 +134,13 @@ function App() {
           <a
             href="https://alexandersandholdt.dk"
             target="_blank"
-            className="text-xs leading-0 text-[#17285E] hover:underline"
+            className="leading-0 text-xs text-[#17285e] hover:underline"
           >
             Made by Alexander Sandholdt
           </a>
         </div>
+        <DepartmentNameInput />
+        <SalesmenInput />
       </main>
     </>
   );

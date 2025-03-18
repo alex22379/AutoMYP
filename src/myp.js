@@ -82,8 +82,7 @@ export function getBilagMeta(bilag) {
   // MYP
   // 0 = Ikke spurgt, 1 = Er MYP, 2 = IM, 3 = MYPOWER, 4 = IGNORER MYP
   let myp;
-  if (bilag.includes("Kunden ønsker at blive MyPOWER")) myp = 3;
-  else if (bilag.includes("ØNSKER IKKE AT BLIVE MYPOWER")) myp = 2;
+  if (bilag.includes("Kunden ønsker at blive MyPOWER") && telefon) myp = 3;
   else if (
     bilag.toLowerCase().includes(" er myp") ||
     bilag.toLowerCase().includes(" er medl") ||
@@ -93,9 +92,10 @@ export function getBilagMeta(bilag) {
     bilag.toLowerCase().includes(" medlem") ||
     bilag.toLowerCase().includes("medlem myp") ||
     bilag.toLowerCase().includes("mypower") ||
-    bilag.includes("MYPOWER-RABAT")
+    (bilag.includes("MYPOWER-RABAT") && telefon)
   )
     myp = 1;
+  else if (bilag.includes("ØNSKER IKKE AT BLIVE MYPOWER")) myp = 2;
   else if (
     bilag.toLowerCase().includes(" ignmyp") ||
     bilag.toLowerCase().includes(" erhverv")
@@ -106,6 +106,12 @@ export function getBilagMeta(bilag) {
   // Retur
   const retur = bilag.includes(" -1 ");
 
+  // Dato
+  const regex = /\d{2}\.\d{2}\.\d{2}/;
+  const dateStr = lines[2].match(regex).shift();
+  const [day, month, year] = dateStr.split(".").map(Number);
+  const date = new Date(year + 2000, month - 1, day);
+
   const meta = {
     bilag: kvittering,
     saelger: saelger,
@@ -114,6 +120,7 @@ export function getBilagMeta(bilag) {
     total: total,
     myp: myp,
     retur: retur,
+    timestamp: date.getTime(),
   };
 
   return meta;
