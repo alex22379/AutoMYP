@@ -1,12 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { FaTimes } from "react-icons/fa";
 
 function salesmenInput() {
-  const [salesmen, setSalesmen] = useState<{ [key: string]: string }>({
-    Alexander: "826583",
-    Jonas: "826584",
-  });
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [salesmen, setSalesmen] = useState<{ [key: string]: string }>(
+    JSON.parse(searchParams.get("salesmen") || "{}"),
+  );
+
+  useEffect(() => {
+    if (Object.entries(salesmen).length > 0)
+      searchParams.set("salesmen", JSON.stringify(salesmen));
+    else searchParams.delete("salesmen");
+    setSearchParams(searchParams, { replace: true });
+  }, [salesmen]);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -23,7 +31,7 @@ function salesmenInput() {
   let i = 0;
 
   return (
-    <section className="max-w-120 space-y-2">
+    <div className="space-y-3">
       <form onSubmit={(e) => handleSubmit(e)} className="space-y-2">
         <div className="flex w-full gap-2">
           <input
@@ -45,7 +53,7 @@ function salesmenInput() {
           Tilføj sælger
         </button>
       </form>
-      <table className="salesmen-table | bg-power-400 border-3 w-full border-collapse overflow-hidden rounded">
+      <table className="salesmen-table | border-3 w-full border-collapse overflow-hidden rounded bg-gray-400">
         <tbody>
           {Object.entries(salesmen).map(([name, code]) => (
             <tr className="flex font-medium" key={code}>
@@ -72,7 +80,7 @@ function salesmenInput() {
           ))}
         </tbody>
       </table>
-    </section>
+    </div>
   );
 }
 

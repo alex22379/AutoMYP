@@ -1,148 +1,61 @@
-import { ChangeEvent, useState } from "react";
 import mypLogo from "@/assets/myp-logo.png";
 
 import DepartmentNameInput from "@/components/DepartmentNameInput.tsx";
 import SalesmenInput from "@/components/SalesmenInput.tsx";
+import Generator from "./components/Generator";
+import Guide from "@/components/Guide";
 
-import { FaCopy } from "react-icons/fa";
-import { getMypData, getMypText } from "./myp";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
-  const [mypText, setMypText] = useState("");
-
-  const selectMypText = () => {
-    const textarea = document.getElementById(
-      "myp-data-text",
-    ) as HTMLTextAreaElement;
-    textarea.select();
-  };
-
-  const copyMypText = () => {
-    selectMypText();
-    document.execCommand("copy");
-  };
-
-  const handleMypFile = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files![0];
-    const encoding = "windows-1252";
-    if (file) {
-      const reader = new FileReader();
-
-      reader.onload = (e: ProgressEvent<FileReader>) => {
-        if (e.target && typeof e.target.result === "string") {
-          setMypText(getMypText(getMypData(e.target.result)));
-        }
-      };
-
-      reader.readAsText(file, encoding);
-    } else setMypText("");
-  };
-
   return (
-    <>
-      <main className="flow-4 bg-power-gray flex min-h-dvh flex-col p-9">
-        <img src={mypLogo} alt="MyPOWER logo" className="h-auto w-96" />
-        <div>
-          <input
-            type="file"
-            accept=".txt"
-            onChange={handleMypFile}
-            id="myp-data-file"
-            className="file:text-power text-white file:cursor-pointer file:rounded file:border-2 file:border-gray-400 file:bg-gray-200 file:px-2.5 file:py-1 file:font-semibold file:shadow-md"
-          />
+    <BrowserRouter>
+      <div className="bg-power-gray grid min-h-dvh place-items-center p-10">
+        <div className="w-300 space-y-8">
+          <header className="grid place-items-center">
+            <h1>
+              <img src={mypLogo} alt="MyPOWER logo" className="h-auto w-96" />{" "}
+              <span className="sr-only">MyPOWER-status generator</span>
+            </h1>
+            <div>
+              <a
+                href="https://alexandersandholdt.dk"
+                target="_blank"
+                className="leading-0 text-xs text-blue-600 hover:underline"
+              >
+                Udviklet af Alexander Sandholdt
+              </a>
+            </div>
+          </header>
+          <main className="grid grid-cols-2 gap-8">
+            <section className="space-y-4">
+              <h2 className="text-power font-mono text-2xl font-bold uppercase">
+                Opsætning
+              </h2>
+              <div className="sticky top-2 space-y-3">
+                <DepartmentNameInput />
+                <SalesmenInput />
+              </div>
+            </section>
+
+            <section className="space-y-4">
+              <h2 className="text-power font-mono text-2xl font-bold uppercase">
+                Generator
+              </h2>
+              <div className="sticky top-2 space-y-3">
+                <Generator />
+              </div>
+            </section>
+          </main>
+          <section className="space-y-4">
+            <h2 className="text-power font-mono text-2xl font-bold uppercase">
+              Guide
+            </h2>
+            <Guide />
+          </section>
         </div>
-        <div>
-          <div className="max-w-225 group relative">
-            <textarea
-              onClick={selectMypText}
-              id="myp-data-text"
-              className="field-sizing-content outline-power peer min-h-48 w-full rounded border-2 border-gray-400 bg-gray-200 px-2 py-1 text-gray-700 shadow-md"
-              readOnly
-              value={mypText}
-            />
-            <button
-              onClick={copyMypText}
-              id="myp-data-ctc"
-              className="leading text-power absolute right-2 top-2 hidden aspect-square cursor-pointer focus:scale-[0.9] group-hover:inline peer-focus:inline"
-            >
-              <FaCopy />
-            </button>
-          </div>
-        </div>
-        <div className="text-gray-400">
-          <p className="text-sm font-bold">I Elguide:</p>
-          <ol className="ml-6 list-decimal text-xs">
-            <li>
-              <p>Åben menu 170</p>
-            </li>
-            <li>
-              <p>
-                Vælg menupunkt 2, <i>Bilagsliste/-kopi</i>
-              </p>
-            </li>
-            <li>
-              <p>Indtast nu dine parametrer og den ønskede periode</p>
-            </li>
-            <li>
-              <p>
-                I den næste menu vælges <i>"Privatkunder"</i>
-              </p>
-            </li>
-            <li>
-              <p>
-                Herefter <i>"Kontantbilag"</i>
-              </p>
-            </li>
-            <li>
-              <p>
-                Tryk nu <code>F12</code> og vælg <i>"Eksport"</i>
-              </p>
-            </li>
-          </ol>
-          <p className="mt-2 text-sm font-bold">
-            Vend tilbage til denne hjemmeside:
-          </p>
-          <ol className="ml-6 list-decimal text-xs">
-            <li>
-              <p>Upload den eksportede fil fra Elguide</p>
-            </li>
-            <li>
-              <p>
-                Kopier teksten og indsæt den i Excel-skemaet under fanen{" "}
-                <i>"myp-data"</i> i celle <code>A1</code>
-              </p>
-            </li>
-          </ol>
-        </div>
-        <div className="text-power flex flex-col text-sm">
-          <a href="/myp.txt" download="myp.txt">
-            Download Elguide-testfil <i>(fiktiv data)</i>
-          </a>
-          <p className="text-xs">
-            (Kontrollér at filen er enkodet i "Windows-1252" med
-            linjeslutningssekvens "CRLF")
-          </p>
-          <a
-            href="/AutoMYP-skema.xlsx"
-            download="AutoMYP-skema.xlsx"
-            className="mt-1"
-          >
-            Download Excel-skabelon
-          </a>
-        </div>
-        <div>
-          <a
-            href="https://alexandersandholdt.dk"
-            target="_blank"
-            className="leading-0 text-xs text-[#17285e] hover:underline"
-          >
-            Made by Alexander Sandholdt
-          </a>
-        </div>
-        <DepartmentNameInput />
-        <SalesmenInput />
-      </main>
-    </>
+      </div>
+    </BrowserRouter>
   );
 }
 

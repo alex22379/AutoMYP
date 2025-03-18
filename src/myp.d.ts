@@ -1,2 +1,2 @@
-export function getMypData(data: string): any[];
-export function getMypText(bilagArr: any[]): string;
+export function getBilagFromFile(data: string): any[];
+export function getMypFormattedText(bilagArr: any[]): string;

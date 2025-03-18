@@ -1,57 +1,62 @@
-import saelgere from "./saelgere.json";
-
-export function getMypText(bilagArr) {
+export function getMypFormattedText(bilagArr) {
   const mypText = [
     ...bilagArr.map((bilag) => Object.values(bilag).join("	")),
   ].join("\n");
   return mypText;
 }
 
-export function getMypData(data) {
-  const dataSplit = data.split(
+export function getBilagFromFile(file, qualify = true) {
+  const fileSplit = file.split(
     "----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\r\n",
   );
-  dataSplit.pop(); // Remove last empty element
+  fileSplit.pop(); // Remove last empty element
+
+  const query = window.location.search;
+  const params = new URLSearchParams(query);
+  const salesmen = JSON.parse(params.get("salesmen") || "{}");
+  console.log("salesmen", salesmen);
 
   const bilagArr = [];
-  for (let bilag of dataSplit) {
-    const meta = getBilagMeta(bilag);
-
-    if (
-      meta.saelger.includes("NPCC") ||
-      meta.total < 0 ||
-      (meta.retur && meta.total <= 0) ||
-      (meta.email && meta.email.split("@")[1]) === "power.dk"
-    )
-      continue;
-
+  for (let bilag of fileSplit) {
+    const meta = extractBilagMeta(bilag, salesmen);
+    if (qualify && !isBilagQualified(meta)) continue;
     bilagArr.push(meta);
   }
-
   return bilagArr;
 }
 
-export function getBilagMeta(bilag) {
+export function isBilagQualified(meta) {
+  if (
+    meta.salesman.includes("NPCC") ||
+    meta.total < 0 ||
+    (meta.retur && meta.total <= 0) ||
+    (meta.email && meta.email.split("@")[1]) === "power.dk"
+  )
+    return false;
+  return true;
+}
+
+export function extractBilagMeta(bilag, salesmen) {
   const lines = bilag.split("\n");
 
   // Bilagsnr.
   const kvittering = lines[0].split("KONTANT ")[1].replaceAll("\r", "");
 
   // Sælger
-  let saelger = undefined;
+  let salesman = undefined;
   if (bilag.includes("Operatør"))
-    saelger = bilag
+    salesman = bilag
       .split("Operatør ")
       .pop()
       .split("|")
       .shift()
       .replaceAll(" ", "");
   else {
-    saelger = lines[3].split("Sælger..: ")[1].replaceAll("\r", "");
+    salesman = lines[3].split("Sælger..: ")[1].replaceAll("\r", "");
 
     const regex = /\d{6,}/;
-    if (regex.test(saelger)) saelger = saelger.match(regex).shift();
-    saelger = saelgere[saelger] ?? saelger;
+    if (regex.test(salesman)) salesman = salesman.match(regex).shift();
+    salesman = salesmen[salesman] ?? salesman;
   }
 
   // Telefon
@@ -83,19 +88,20 @@ export function getBilagMeta(bilag) {
   // 0 = Ikke spurgt, 1 = Er MYP, 2 = IM, 3 = MYPOWER, 4 = IGNORER MYP
   let myp;
   if (bilag.includes("Kunden ønsker at blive MyPOWER") && telefon) myp = 3;
+  else if (bilag.includes("ØNSKER IKKE AT BLIVE MYPOWER")) myp = 2;
   else if (
-    bilag.toLowerCase().includes(" er myp") ||
-    bilag.toLowerCase().includes(" er medl") ||
-    bilag.toLowerCase().includes(" allerede medl") ||
-    bilag.toLowerCase().includes(" allerede myp") ||
-    bilag.toLowerCase().includes(" amp") ||
-    bilag.toLowerCase().includes(" medlem") ||
-    bilag.toLowerCase().includes("medlem myp") ||
-    bilag.toLowerCase().includes("mypower") ||
-    (bilag.includes("MYPOWER-RABAT") && telefon)
+    (bilag.toLowerCase().includes(" er myp") ||
+      bilag.toLowerCase().includes(" er medl") ||
+      bilag.toLowerCase().includes(" allerede medl") ||
+      bilag.toLowerCase().includes(" allerede myp") ||
+      bilag.toLowerCase().includes(" amp") ||
+      bilag.toLowerCase().includes(" medlem") ||
+      bilag.toLowerCase().includes("medlem myp") ||
+      bilag.toLowerCase().includes("mypower") ||
+      bilag.includes("MYPOWER-RABAT")) &&
+    telefon
   )
     myp = 1;
-  else if (bilag.includes("ØNSKER IKKE AT BLIVE MYPOWER")) myp = 2;
   else if (
     bilag.toLowerCase().includes(" ignmyp") ||
     bilag.toLowerCase().includes(" erhverv")
@@ -114,7 +120,7 @@ export function getBilagMeta(bilag) {
 
   const meta = {
     bilag: kvittering,
-    saelger: saelger,
+    salesman: salesman,
     telefon: telefon,
     email: email,
     total: total,
