@@ -31,9 +31,6 @@ export function getDatePeriodString(bilagArr) {
     month: "short",
     year: "numeric",
   };
-  console.log(
-    `${lowestDate.toLocaleDateString("da-DK", options)} - ${highestDate.toLocaleDateString("da-DK", options)}`,
-  );
   if (areSameDay(lowestDate, highestDate))
     return `${highestDate.toLocaleDateString("da-DK", options)}`;
   else
@@ -66,7 +63,10 @@ export function getSalesmenMypStats(bilagArr) {
 
     salesmenStats[salesman]["hitrate"] = hitrate;
   }
-  return salesmenStats;
+  const sortedSalesmenStatsArr = Object.entries(salesmenStats)
+    .sort(([, a], [, b]) => b.hitrate - a.hitrate)
+    .map(([key, value]) => ({ code: key, ...value }));
+  return sortedSalesmenStatsArr;
 }
 
 export function getBilagFromFile(file, qualify = true) {

@@ -44,18 +44,17 @@ function generator() {
   };
 
   interface SalesmanMypStats {
-    [key: string]: {
-      name: string;
-      hitrate: number;
-      "3": number;
-      "2": number;
-      "1": number;
-      "0": number;
-      total: number;
-    };
+    code: string;
+    name: string;
+    hitrate: number;
+    "3": number;
+    "2": number;
+    "1": number;
+    "0": number;
+    total: number;
   }
-  const [salesmenMypStats, setSalesmenMypStats] = useState<SalesmanMypStats>(
-    {},
+  const [salesmenMypStats, setSalesmenMypStats] = useState<SalesmanMypStats[]>(
+    [],
   );
   const [datePeriodString, setDatePeriodString] = useState("");
 
@@ -161,31 +160,21 @@ function generator() {
                 </tr>
               </thead>
               <tbody>
-                {Object.keys(salesmenMypStats).map((salesman) => (
-                  <tr key={salesman}>
-                    <td className="text-gray-500">{salesman}</td>
-                    <td className="!font-[600]">
-                      {salesmenMypStats[salesman].name}
-                    </td>
+                {salesmenMypStats.map((salesman) => (
+                  <tr key={salesman.code}>
+                    <td className="text-gray-500">{salesman.code}</td>
+                    <td className="!font-[600]">{salesman.name}</td>
                     <td
-                      className={`text-center !font-[600] ${salesmenMypStats[salesman].hitrate >= 0.8 ? "text-green-600" : salesmenMypStats[salesman].hitrate >= 0.5 ? "text-yellow-500" : "text-red-600"}`}
+                      className={`text-center !font-[600] ${salesman.hitrate >= 0.8 ? "text-green-600" : salesman.hitrate >= 0.5 ? "text-yellow-500" : "text-red-600"}`}
                     >
-                      {(salesmenMypStats[salesman].hitrate * 100).toFixed(1)}%
+                      {(salesman.hitrate * 100).toFixed(1)}%
                     </td>
-                    <td className="text-center italic">
-                      {salesmenMypStats[salesman]["3"] ?? 0}
-                    </td>
-                    <td className="text-center italic">
-                      {salesmenMypStats[salesman]["2"] ?? 0}
-                    </td>
-                    <td className="text-center italic">
-                      {salesmenMypStats[salesman]["1"] ?? 0}
-                    </td>
-                    <td className="text-center italic">
-                      {salesmenMypStats[salesman]["0"] ?? 0}
-                    </td>
+                    <td className="text-center italic">{salesman["3"] ?? 0}</td>
+                    <td className="text-center italic">{salesman["2"] ?? 0}</td>
+                    <td className="text-center italic">{salesman["1"] ?? 0}</td>
+                    <td className="text-center italic">{salesman["0"] ?? 0}</td>
                     <td className="text-right text-gray-500">
-                      {salesmenMypStats[salesman].total}
+                      {salesman.total}
                     </td>
                   </tr>
                 ))}

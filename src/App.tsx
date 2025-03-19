@@ -27,12 +27,20 @@ function App() {
               </a>
             </div>
           </header>
-          <main className="grid grid-cols-2 gap-6">
+
+          <main className="space-y-8">
+            <section className="space-y-4">
+              <h2 className="text-power font-mono text-2xl font-bold uppercase">
+                Generator
+              </h2>
+              <Generator />
+            </section>
+
             <section className="space-y-4">
               <h2 className="text-power font-mono text-2xl font-bold uppercase">
                 Opsætning
               </h2>
-              <div className="sticky top-2 space-y-3">
+              <div className="max-w-125 space-y-3">
                 <DepartmentNameInput />
                 <SalesmenInput />
               </div>
@@ -40,19 +48,11 @@ function App() {
 
             <section className="space-y-4">
               <h2 className="text-power font-mono text-2xl font-bold uppercase">
-                Generator
+                Guide
               </h2>
-              <div className="sticky top-2 space-y-3">
-                <Generator />
-              </div>
+              <Guide />
             </section>
           </main>
-          <section className="space-y-4">
-            <h2 className="text-power font-mono text-2xl font-bold uppercase">
-              Guide
-            </h2>
-            <Guide />
-          </section>
         </div>
       </div>
     </BrowserRouter>
