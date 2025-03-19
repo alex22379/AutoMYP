@@ -207,7 +207,7 @@ function generator() {
                       {salesman.total}
                     </td>
                     <td className="text-right text-gray-700">
-                      {salesman.mypDiscount}
+                      {salesman.mypDiscount ?? 0}
                     </td>
                   </tr>
                 ))}

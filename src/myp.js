@@ -47,9 +47,9 @@ export function getSalesmenMypStats(bilagArr) {
       salesmenStats[salesman][mypStatus] += 1;
     else salesmenStats[salesman][mypStatus] = 1;
 
-    if (salesmenStats[salesman]["mypDiscount"])
-      salesmenStats[salesman]["mypDiscount"] += 1;
-    else salesmenStats[salesman]["mypDiscount"] = 1;
+    if (bilag.mypDiscount)
+      salesmenStats[salesman]["mypDiscount"] =
+        (salesmenStats[salesman]["mypDiscount"] ?? 0) + 1;
 
     salesmenStats[salesman]["name"] = bilag.name;
   }
