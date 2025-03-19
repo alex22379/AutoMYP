@@ -52,6 +52,7 @@ function generator() {
     "1": number;
     "0": number;
     total: number;
+    mypDiscount: number;
   }
   const [salesmenMypStats, setSalesmenMypStats] = useState<SalesmanMypStats[]>(
     [],
@@ -133,7 +134,7 @@ function generator() {
             >
               <thead className="text-white">
                 <tr className="!bg-power-gray-400">
-                  <th colSpan={8}>
+                  <th colSpan={9}>
                     <div className="flex w-full flex-col">
                       <span className="w-full text-xl font-black">
                         MYPOWER-STATUS
@@ -185,6 +186,7 @@ function generator() {
                     </div>
                   </th>
                   <th>Total</th>
+                  <th className="!bg-yellow-500 italic">MYP-rabat</th>
                 </tr>
               </thead>
               <tbody>
@@ -203,6 +205,9 @@ function generator() {
                     <td className="text-center italic">{salesman["0"] ?? 0}</td>
                     <td className="text-right text-gray-500">
                       {salesman.total}
+                    </td>
+                    <td className="text-right text-gray-700">
+                      {salesman.mypDiscount}
                     </td>
                   </tr>
                 ))}

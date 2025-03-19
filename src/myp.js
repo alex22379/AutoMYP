@@ -47,6 +47,10 @@ export function getSalesmenMypStats(bilagArr) {
       salesmenStats[salesman][mypStatus] += 1;
     else salesmenStats[salesman][mypStatus] = 1;
 
+    if (salesmenStats[salesman]["mypDiscount"])
+      salesmenStats[salesman]["mypDiscount"] += 1;
+    else salesmenStats[salesman]["mypDiscount"] = 1;
+
     salesmenStats[salesman]["name"] = bilag.name;
   }
   for (let salesman of Object.keys(salesmenStats)) {
@@ -93,7 +97,8 @@ export function isBilagQualified(meta) {
     meta.salesman.includes("NPCC") ||
     meta.total < 0 ||
     (meta.retur && meta.total <= 0) ||
-    (meta.email && meta.email.split("@")[1]) === "power.dk"
+    (meta.email && meta.email.split("@")[1]) === "power.dk" ||
+    !meta.name
   )
     return false;
   return true;
@@ -182,9 +187,11 @@ export function extractBilagMeta(bilag, salesmen) {
   const date = new Date(year + 2000, month - 1, day);
 
   // Navn
-
   const name =
-    Object.entries(salesmen).find(([k, v]) => v === salesman)?.[0] ?? "N/A";
+    Object.entries(salesmen).find(([k, v]) => v === salesman)?.[0] ?? undefined;
+
+  // MYP-DISCOUNT
+  const mypDiscount = bilag.includes("MYPOWER-RABAT ");
 
   const meta = {
     bilag: kvittering,
@@ -196,6 +203,7 @@ export function extractBilagMeta(bilag, salesmen) {
     retur: retur,
     timestamp: date.getTime(),
     name: name,
+    mypDiscount: mypDiscount,
   };
 
   return meta;
