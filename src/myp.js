@@ -117,7 +117,7 @@ export function extractBilagMeta(bilag, salesmen) {
   else {
     salesman = lines[3].split("Sælger..: ")[1].replaceAll("\r", "");
 
-    const regex = /\d{6,}/;
+    const regex = /\d{2}[A-Za-z0-9]{4}/;
     if (regex.test(salesman)) salesman = salesman.match(regex).shift();
     salesman = salesmen[salesman] ?? salesman;
   }
