@@ -126,9 +126,9 @@ function generator() {
 			*/}
       {Object.entries(salesmenMypStats).length > 0 && (
         <>
-          <div className="overflow-auto shadow-lg">
+          <div className="overflow-auto">
             <table
-              className="myp-table | text-white border-3 overflow-hidden rounded bg-gray-400"
+              className="myp-table | text-white border-3 overflow-hidden rounded bg-gray-400 shadow-lg"
               ref={tableRef}
             >
               <thead className="text-white">
@@ -152,10 +152,38 @@ function generator() {
                   <th>Sælgerkode</th>
                   <th>Navn</th>
                   <th>Hitrate</th>
-                  <th className="italic">"MyPOWER"</th>
-                  <th className="italic">"IM"</th>
-                  <th className="italic">"Er MYP"</th>
-                  <th className="italic">Ikke spurgt</th>
+                  <th className="italic">
+                    <div className="flex flex-col">
+                      <span>"MyPOWER"</span>
+                      <span className="font-mono text-xs normal-case not-italic text-green-500 shadow-black drop-shadow-md">
+                        1 point
+                      </span>
+                    </div>
+                  </th>
+                  <th className="italic">
+                    <div className="flex flex-col">
+                      <span>"IM"</span>
+                      <span className="font-mono text-xs normal-case not-italic text-yellow-400 shadow-black drop-shadow-md">
+                        0,7 point
+                      </span>
+                    </div>
+                  </th>
+                  <th className="italic">
+                    <div className="flex flex-col">
+                      <span>"Er MYP"</span>
+                      <span className="font-mono text-xs normal-case not-italic text-green-500 shadow-black drop-shadow-md">
+                        1 point
+                      </span>
+                    </div>
+                  </th>
+                  <th className="italic">
+                    <div className="flex flex-col">
+                      <span>Ikke spurgt</span>
+                      <span className="font-mono text-xs normal-case not-italic text-red-700 shadow-black drop-shadow-md">
+                        0 point
+                      </span>
+                    </div>
+                  </th>
                   <th>Total</th>
                 </tr>
               </thead>

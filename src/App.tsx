@@ -37,9 +37,15 @@ function App() {
             </section>
 
             <section className="space-y-4">
-              <h2 className="text-power font-mono text-2xl font-bold uppercase">
-                Opsætning
-              </h2>
+              <div>
+                <h2 className="text-power font-mono text-2xl font-bold uppercase">
+                  Opsætning
+                </h2>
+                <p className="font-mono text-sm text-white">
+                  [TIP: Når du laver ændringer, så gem linket på ny - selve
+                  opsætningen er gemt i linket]
+                </p>
+              </div>
               <div className="max-w-125 space-y-3">
                 <DepartmentNameInput />
                 <SalesmenInput />
