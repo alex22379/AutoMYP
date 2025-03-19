@@ -73,7 +73,7 @@ function generator() {
       };
 
       reader.readAsText(file, encoding);
-    } else setSalesmenMypStats({});
+    } else setSalesmenMypStats([]);
   };
 
   return (
