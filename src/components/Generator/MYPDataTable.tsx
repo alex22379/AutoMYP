@@ -16,7 +16,10 @@ const MYPDataTable: FC<props> = ({
 }) => {
   const [searchParams] = useSearchParams();
 
-  function sortTable(n: number) {
+  function sortTable(
+    n: number,
+    forceDir: "asc" | "desc" | undefined = undefined,
+  ) {
     let rows,
       switching,
       i,
@@ -28,7 +31,7 @@ const MYPDataTable: FC<props> = ({
     const table = tableRef.current!;
     switching = true;
     // Set the sorting direction to ascending:
-    dir = "asc";
+    dir = forceDir ?? "desc";
     /* Make a loop that will continue until
 		no switching has been done: */
     while (switching) {
@@ -48,8 +51,8 @@ const MYPDataTable: FC<props> = ({
 				based on the direction, asc or desc: */
         if (dir == "asc") {
           if (
-            (x.getAttribute("data-sort-value") ?? x.innerHTML.toLowerCase()) >
-            (y.getAttribute("data-sort-value") ?? y.innerHTML.toLowerCase())
+            (x.getAttribute("data-sort-value") ?? Number(x.innerHTML)) >
+            (y.getAttribute("data-sort-value") ?? Number(y.innerHTML))
           ) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
@@ -57,8 +60,8 @@ const MYPDataTable: FC<props> = ({
           }
         } else if (dir == "desc") {
           if (
-            (x.getAttribute("data-sort-value") ?? x.innerHTML.toLowerCase()) <
-            (y.getAttribute("data-sort-value") ?? y.innerHTML.toLowerCase())
+            (x.getAttribute("data-sort-value") ?? Number(x.innerHTML)) <
+            (y.getAttribute("data-sort-value") ?? Number(y.innerHTML))
           ) {
             // If so, mark as a switch and break the loop:
             shouldSwitch = true;
@@ -76,8 +79,8 @@ const MYPDataTable: FC<props> = ({
       } else {
         /* If no switching has been done AND the direction is "asc",
 				set the direction to "desc" and run the while loop again. */
-        if (switchcount == 0 && dir == "asc") {
-          dir = "desc";
+        if (!forceDir && switchcount == 0 && dir == "desc") {
+          dir = "asc";
           switching = true;
         }
       }
@@ -85,7 +88,7 @@ const MYPDataTable: FC<props> = ({
   }
 
   useEffect(() => {
-    sortTable(2);
+    sortTable(2, "desc");
   }, [tableRef.current]);
 
   return (
