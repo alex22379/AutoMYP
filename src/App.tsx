@@ -1,9 +1,9 @@
 import mypLogo from "@/assets/myp-logo.png";
 
-import DepartmentNameInput from "@/components/DepartmentNameInput.tsx";
-import SalesmenInput from "@/components/SalesmenInput.tsx";
+import Configuration from "./components/Configuration";
 import Generator from "./components/Generator";
 import Guide from "@/components/Guide";
+import Section from "@/components/ui/Section";
 
 import { BrowserRouter } from "react-router-dom";
 
@@ -29,35 +29,21 @@ function App() {
           </header>
 
           <main className="space-y-8">
-            <section className="space-y-4">
-              <h2 className="text-power font-mono text-2xl font-bold uppercase">
-                Generator
-              </h2>
+            <Section title="Generator">
               <Generator />
-            </section>
+            </Section>
 
-            <section className="space-y-4">
-              <div>
-                <h2 className="text-power font-mono text-2xl font-bold uppercase">
-                  Opsætning
-                </h2>
-                <p className="font-mono text-sm text-white">
-                  [TIP: Når du laver ændringer, så gem linket på ny - selve
-                  opsætningen er gemt i linket]
-                </p>
-              </div>
-              <div className="max-w-125 space-y-3">
-                <DepartmentNameInput />
-                <SalesmenInput />
-              </div>
-            </section>
+            <Section title="Opsætning">
+              <Configuration />
+              <p className="font-mono text-sm text-white">
+                [TIP: Når du laver ændringer, så gem linket på ny - selve
+                opsætningen er gemt i linket]
+              </p>
+            </Section>
 
-            <section className="space-y-4">
-              <h2 className="text-power font-mono text-2xl font-bold uppercase">
-                Guide
-              </h2>
+            <Section title="Guide">
               <Guide />
-            </section>
+            </Section>
           </main>
         </div>
       </div>

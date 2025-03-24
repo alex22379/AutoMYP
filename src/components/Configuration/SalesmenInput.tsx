@@ -51,33 +51,35 @@ function salesmenInput() {
           Tilføj sælger
         </button>
       </form>
-      <table className="salesmen-table | border-3 w-full border-collapse overflow-hidden rounded bg-gray-400">
-        <tbody>
-          {Object.entries(salesmen).map(([name, code]) => (
-            <tr className="flex font-medium" key={code}>
-              <td className="border-1 flex-1 border-dashed border-gray-400 px-2">
-                {name}
-              </td>
-              <td className="border-1 flex-1 border-dashed border-gray-400 px-2">
-                {code}
-              </td>
-              <td className="border-1 grid place-items-center border-dashed border-gray-400">
-                <button
-                  className="px-0.75 aspect-square cursor-pointer text-red-400 active:scale-90"
-                  onClick={() =>
-                    setSalesmen((prevSalesmen) => {
-                      const { [name]: _, ...newSalesmen } = prevSalesmen;
-                      return newSalesmen;
-                    })
-                  }
-                >
-                  <FaTimes />
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {Object.keys(salesmen).length > 0 && (
+        <table className="salesmen-table | border-3 w-full border-collapse overflow-hidden rounded bg-gray-400">
+          <tbody>
+            {Object.entries(salesmen).map(([name, code]) => (
+              <tr className="flex font-medium" key={code}>
+                <td className="border-1 flex-1 border-dashed border-gray-400 px-2">
+                  {name}
+                </td>
+                <td className="border-1 flex-1 border-dashed border-gray-400 px-2">
+                  {code}
+                </td>
+                <td className="border-1 grid place-items-center border-dashed border-gray-400">
+                  <button
+                    className="px-0.75 aspect-square cursor-pointer text-red-400 active:scale-90"
+                    onClick={() =>
+                      setSalesmen((prevSalesmen) => {
+                        const { [name]: _, ...newSalesmen } = prevSalesmen;
+                        return newSalesmen;
+                      })
+                    }
+                  >
+                    <FaTimes />
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 }

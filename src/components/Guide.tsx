@@ -57,10 +57,10 @@ function guide() {
         </ol>
       </div>
       <div className="text-power flex flex-col text-sm">
-        <a href="/myp.txt" download="myp.txt">
-          Download Elguide-testfil <i>(fiktiv data)</i>
+        <a href="/myp.txt" download="Isale.txt">
+          Download fiktiv Elguide-eksportfil
         </a>
-        <p className="text-xs">
+        <p className="text-xs italic">
           (Kontrollér at filen er enkodet i "Windows-1252" med
           linjeslutningssekvens "CRLF")
         </p>
