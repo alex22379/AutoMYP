@@ -108,7 +108,7 @@ function getSalesmenMYPStats(bilagSet: BilagSet): SalesmenMYPStats {
       stats[salesman] = {
         salesman: salesman,
         name:
-          Object.entries(salesmen).find(([k, v]) => v === salesman)?.[0] ??
+          Object.entries(salesmen).find(([_, v]) => v === salesman)?.[0] ??
           undefined,
         [MYPStatus.NOT_ASKED]: 0,
         [MYPStatus.ALREADY_MYP]: 0,

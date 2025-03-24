@@ -16,7 +16,7 @@ const MYPDataTable: FC<props> = ({
 }) => {
   const [searchParams] = useSearchParams();
 
-  function sortTable(n) {
+  function sortTable(n: number) {
     let rows,
       switching,
       i,
