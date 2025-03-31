@@ -18,6 +18,8 @@ const config = {
   IM_WEIGHT: 0.7,
 
   EG_EXPORT_FILE_ENCODING: "windows-1252",
+
+  LOCALE: "da-DK",
 };
 
 export default config;

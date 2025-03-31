@@ -2,6 +2,7 @@ import { MYPStatus, SalesmenMYPStats } from "@/scripts/processEGExportFile";
 import { FC } from "react";
 import { useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
+import config from "@/config";
 
 type props = {
   salesmenMYPStats: SalesmenMYPStats;
@@ -128,7 +129,7 @@ const MYPDataTable: FC<props> = ({
             <div className="flex flex-col">
               <span>"IM"</span>
               <span className="font-mono text-xs normal-case not-italic text-yellow-400 shadow-black drop-shadow-md">
-                0,7 point
+                {config.IM_WEIGHT.toLocaleString(config.LOCALE)} point
               </span>
             </div>
           </th>

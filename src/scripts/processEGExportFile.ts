@@ -91,9 +91,9 @@ export function getDatePeriodFromBilagSet(bilagSet: BilagSet): string {
     lowestDate.getMonth() === highestDate.getMonth() &&
     lowestDate.getDate() === highestDate.getDate()
   )
-    return `${highestDate.toLocaleDateString("da-DK", options)}`;
+    return `${highestDate.toLocaleDateString(config.LOCALE, options)}`;
   else
-    return `${lowestDate.toLocaleDateString("da-DK", options)} - ${highestDate.toLocaleDateString("da-DK", options)}`;
+    return `${lowestDate.toLocaleDateString(config.LOCALE, options)} - ${highestDate.toLocaleDateString(config.LOCALE, options)}`;
 }
 
 function getSalesmenMYPStats(bilagSet: BilagSet): SalesmenMYPStats {
