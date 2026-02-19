@@ -169,7 +169,7 @@ const MYPDataTable: FC<props> = ({
               <td className="text-gray-500">{stats.salesman}</td>
               <td className="!font-[600]">{stats.name}</td>
               <td
-                className={`text-center !font-[600] ${hitrate >= 0.8 ? "text-green-600" : hitrate >= 0.5 ? "text-yellow-500" : "text-red-600"}`}
+                className={`text-center !font-[600] ${hitrate >= 0.85 ? "text-green-600" : hitrate >= 0.7 ? "text-yellow-500" : "text-red-600"}`}
                 data-sort-value={hitrate}
               >
                 {(hitrate * 100).toFixed(1)}%

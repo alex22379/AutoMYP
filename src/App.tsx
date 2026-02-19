@@ -19,7 +19,7 @@ function App() {
             </h1>
             <div>
               <a
-                href="https://alexandersandholdt.dk/?ref=automyp"
+                href="https://alexandersandholdt.dk"
                 target="_blank"
                 className="leading-0 text-xs text-blue-600 hover:underline"
               >
